@@ -71,26 +71,27 @@ public class Zadatak1 {
             e.printStackTrace();
         }
         receiveSpecialOffers.click();
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("window.scrollBy(800,1000);", "");
 
         WebElement firstName = driver.findElement(By.id("first_name"));
         firstName.sendKeys("Emilly");
-        firstName.submit();
+
 
         WebElement lastName = driver.findElement(By.id("last_name"));
         lastName.sendKeys("Shulltcz");
-        lastName.submit();
+
 
         WebElement company = driver.findElement(By.id("company"));
         company.sendKeys("Bolcino");
-        company.submit();
+
 
         WebElement address1 = driver.findElement(By.id("address1"));
         address1.sendKeys("Murazik, Schamber93684 Marta Radialger and Rempel");
-        address1.submit();
+
 
         WebElement address2 = driver.findElement(By.id("address2"));
         address2.sendKeys("Murazik, Schamber93684 Marta Radialger and Rempel");
-        address2.submit();
 
 
         WebElement country = driver.findElement(By.id("country"));
@@ -99,21 +100,22 @@ public class Zadatak1 {
 
         WebElement state = driver.findElement(By.id("state"));
         state.sendKeys("Punjab");
-        state.submit();
+
 
         WebElement city = driver.findElement(By.id("city"));
         city.sendKeys("Chandigarh");
-        city.submit();
+
 
         WebElement zipcode = driver.findElement(By.id("zipcode"));
         zipcode.sendKeys("160001");
-        zipcode.submit();
+
+
 
         WebElement mobileNumber = driver.findElement(By.id("mobile_number"));
         mobileNumber.sendKeys(faker.phoneNumber().phoneNumber());
-        mobileNumber.click();
 
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        WebElement createAccount = driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div/div[1]/form/button"));
+        createAccount.click();
 
 
         WebElement contin = driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div/div/a"));
